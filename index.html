@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><?= title ?></title>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <div class="navbar-brand"><?= title ?></div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mainpanel">
+    <div class="container">
+        <table class="table table-striped">
+            <tbody data-bind="foreach: list">
+                <tr>
+                    <td style="width:10%" data-bind="text: category"></td>
+                    <td style="width:80%" ><a target="_blank" data-bind="text: name, attr: { href: url}"> </a></td>
+                    <td style="width:10%" data-bind="text: date"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.2.js"></script>
+  <?!= HtmlService.createHtmlOutputFromFile('css').getContent(); ?>
+  <script type="text/javascript">
+    var model = { list: ko.observable() };
+    model.list(JSON.parse(<?= data ?>));
+    $(document).ready(function () {
+      ko.applyBindings(model);
+    });
+  </script>
+</body>
+</html>

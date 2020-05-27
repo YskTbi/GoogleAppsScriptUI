@@ -1,0 +1,59 @@
+<style>
+  html {
+    min-height: 100%;
+    position: relative;
+  }
+  body {
+    padding-top: 30px;
+    margin-bottom:30px;
+  }
+  .mainpanel {
+    padding: 10px 15px;
+  }
+  .logpanel {
+    width: 100%;
+  }
+  .navbar-fixed-top{
+    background-color: #6D9FB8;
+    border-color: #6D9FB8;
+    pointer-events: none;
+  }
+  .navbar-header {
+    background-color: #6D9FB8;
+  }
+  .navbar-brand {
+    color: white !important;
+    float: left;
+    height: initial;
+    padding: 5px 5px;
+    font-size: 18px;
+    line-height: 20px;
+
+  }
+  .navbar {
+    min-height: initial;
+  }
+  .table>thead>tr>th {
+    border-bottom: initial;
+   }
+
+  .footer {
+    background-color: #6D9FB8;
+    bottom: 0;
+    height: 30px;
+    width:100%;
+    position: absolute;
+  }
+  p {
+    color: white !important;
+  }
+  table{
+    table-layout: fixed;
+  }
+  td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+</style>
